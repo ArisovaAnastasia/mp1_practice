@@ -33,6 +33,14 @@ int main()
 	{
 		printf("Окружность 1 в окружности 2");
 	}
+	else if ((diag < rf) and ((diag + rs) < rf))
+	{
+		printf("Окружность 2 в окружности 1");
+	}
+	else if ((diag < rs) and ((diag + rf) < rs))
+	{
+		printf("Окружность 1 в окружности 2");
+	}
 
 	else if ((diag == rsum))
 	{
@@ -42,9 +50,10 @@ int main()
 	{
 		printf("Окружности пересекаются в двух точках");
 	}
-	
+
 	else
 	{
 		printf("Окружности не пересекаются");
 	}
+
 }
