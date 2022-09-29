@@ -19,4 +19,5 @@ int main(){
         printf("Не пересекаются");
     else if(distance<r1+r2)
         printf("Пересекаются в 2 точках");
+
 }
