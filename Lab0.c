@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <math.h>
+#include <locale.h>
 
 int main(){
+    setlocale(LC_ALL,"Russian");
     int x1, y1, r1, x2, y2, r2;
     double distance;
     printf("Введите координаты центра и радиус первой окружности: ");
@@ -19,5 +21,5 @@ int main(){
         printf("Не пересекаются");
     else if(distance<r1+r2)
         printf("Пересекаются в 2 точках");
-
+    return 0;
 }
