@@ -1,42 +1,38 @@
 #include <stdio.h>
-#include <iostream>
+#include <locale.h>
 int main()
 {
 	setlocale(LC_ALL, "rus");
 	int x, y, z;
-	double a;
-	a = 0;
-	printf("¬‚Â‰ËÚÂ ÚË ˜ËÒÎ‡ \n");
-	scanf("%i %i %i", &x, &y, &z);
+	printf("–í–≤–µ–¥–∏—Ç–µ 3 —á–∏—Å–ª–∞ \n");
+	scanf_s("%i %i %i", &x, &y, &z);
 	if (x == y and y == z)
 	{
-		printf("—Â‰ÌÂÂ ˜ËÒÎÓ = %i", x);
+		printf("–ú–µ–¥–∏–∞–Ω–æ–π —è–≤–ª—è–µ—Ç—Å—è —á–∏—Å–ª–æ x");
 	}
-	else if ((x == y and x > z) or (x == y and x < z))
+	else if (x == y)
 	{
-		a = (x + z) / 2.0;
-		printf("—Â‰ÌÂÂ ˜ËÒÎÓ = %f", a);
+		printf("–ú–µ–¥–∏–∞–Ω–æ–π —è–≤–ª—è–µ—Ç—Å—è —á–∏—Å–ª–æ %i", x);
 	}
-	else if ((x == z and y > z) or (x == z and y < z))
+	else if (x == z)
 	{
-		a = (y + z) / 2.0;
-		printf("—Â‰ÌÂÂ ˜ËÒÎÓ = %f", a);
+		printf("–ú–µ–¥–∏–∞–Ω–æ–π —è–≤–ª—è–µ—Ç—Å—è —á–∏—Å–ª–æ %i", x);
 	}
-	else if ((z == y and x > z) or (z == y and x < z))
+	else if (z == y)
 	{
-		a = (x + z) / 2.0;
-		printf("—Â‰ÌÂÂ ˜ËÒÎÓ = %f", a);
+		printf("–ú–µ–¥–∏–∞–Ω–æ–π —è–≤–ª—è–µ—Ç—Å—è —á–∏—Å–ª–æ %i", y);
 	}
 	else if ((x > y and y > z) or (z > y and y > x))
 	{
-		printf("—Â‰ÌÂÂ ˜ËÒÎÓ = %i", y);
-	}
-	else if ((y > x and x > z) or (z > x and x > y))
-	{
-		printf("—Â‰ÌÂÂ ˜ËÒÎÓ = %i", x);
+		printf("–ú–µ–¥–∏–∞–Ω–æ–π —è–≤–ª—è–µ—Ç—Å—è —á–∏—Å–ª–æ %i", y);
 	}
 	else if ((x > z and z > y) or (y > z and z > x))
 	{
-		printf("—Â‰ÌÂÂ ˜ËÒÎÓ = %i", z);
+		printf("–ú–µ–¥–∏–∞–Ω–æ–π —è–≤–ª—è–µ—Ç—Å—è —á–∏—Å–ª–æ %i", z);
 	}
+	else if ((y > x and x > z) or (z > x and x > y))
+	{
+		printf("–ú–µ–¥–∏–∞–Ω–æ–π —è–≤–ª—è–µ—Ç—Å—è —á–∏—Å–ª–æ %i", x);
+	}
+	return 0;
 }

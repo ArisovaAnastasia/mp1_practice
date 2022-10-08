@@ -1,20 +1,25 @@
 #include <stdio.h>
-#include <iostream>
+#include <locale.h>
 #include <cmath>
 int main()
 {
-	setlocale(LC_ALL, "rus");
+	setlocale(LC_ALL, "RU");
 	int xf, yf, rf, xs, ys, rs, xsum, ysum, rsum;
 	double diag;
 	rsum = 0;
-	printf("Введите X и Y первой окружности\n");
-	scanf("%i %i", &xf, &yf);
-	printf("Введите радиус первой окружности\n");
-	scanf("%i", &rf);
-	printf("Введите X и Y второй окружности\n");
-	scanf("%i %i", &xs, &ys);
-	printf("Введите радиус второй окружности\n");
-	scanf("%i", &rs);
+	
+	printf("Р’РІРµРґРёС‚Рµ X Рё Y С†РµРЅС‚СЂР° РїРµСЂРІРѕР№ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё\n");
+	scanf_s("%i %i", &xf, &yf);
+	
+	printf("Р’РІРµРґРёС‚Рµ СЂР°РґРёСѓСЃ РїРµСЂРІРѕР№ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё\n");
+	scanf_s("%i", &rf);
+	
+	printf("Р’РІРµРґРёС‚Рµ X Рё Y С†РµРЅС‚СЂР° РІС‚РѕСЂРѕР№ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё\n");
+	scanf_s("%i %i", &xs, &ys);
+	
+	printf("Р’РІРµРґРёС‚Рµ СЂР°РґРёСѓСЃ РІС‚РѕСЂРѕР№ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё\n");
+	scanf_s("%i", &rs);
+	
 	rsum = rf + rs;
 	ysum = abs(yf) + abs(ys);
 	xsum = abs(xf) + abs(xs);
@@ -22,38 +27,27 @@ int main()
 
 	if (xf == xs and yf == ys and rf == rs)
 	{
-		printf("Окружности совпадают");
+		printf("РћРєСЂСѓР¶РЅРѕСЃС‚Рё СЃРѕРІРїР°РґР°СЋС‚");
 	}
-
-	else if (xf == xs and yf == ys and rf > rs)
+	else if ((xf == xs and yf == ys and rf > rs) or ((diag + rs) < rf))
 	{
-		printf("Окружность 2 в окружности 1");
+		printf("РћРєСЂСѓР¶РЅРѕСЃС‚СЊ 2 РЅР°С…РѕРґРёС‚СЃСЏ РІРЅСѓС‚СЂРё РѕРєСЂСѓР¶РЅРѕСЃС‚Рё 1, РЅРѕ РЅРµ РїРµСЂРµСЃРµРєР°РµС‚ РµС‘");
 	}
-	else if (xf == xs and yf == ys and rf < rs)
+	else if ((xf == xs and yf == ys and rf < rs) or ((diag + rf) < rs))
 	{
-		printf("Окружность 1 в окружности 2");
+		printf("РћРєСЂСѓР¶РЅРѕСЃС‚СЊ 1 РЅР°С…РѕРґРёС‚СЃСЏ РІРЅСѓС‚СЂРё РѕРєСЂСѓР¶РЅРѕСЃС‚Рё 2, РЅРѕ РЅРµ РїРµСЂРµСЃРµРєР°РµС‚ РµС‘");
 	}
-	else if ((diag < rf) and ((diag + rs) < rf))
+	else if ((diag == rsum) or ((diag + rs) == rf) or ((diag + rf) == rs))
 	{
-		printf("Окружность 2 в окружности 1");
+		printf("РћРєСЂСѓР¶РЅРѕСЃС‚Рё РїРµСЂРµСЃРµРєР°СЋС‚СЃСЏ РІ РѕРґРЅРѕР№ С‚РѕС‡РєРµ");
 	}
-	else if ((diag < rs) and ((diag + rf) < rs))
+	else if ((diag < rsum) or ((diag + rf) > rs) or ((diag + rs) > rf))
 	{
-		printf("Окружность 1 в окружности 2");
+		printf("РћРєСЂСѓР¶РЅРѕСЃС‚Рё РїРµСЂРµСЃРµРєР°СЋС‚СЃСЏ РІ РґРІСѓС… С‚РѕС‡РєР°С…");
 	}
-
-	else if ((diag == rsum))
+	else if (diag > rsum)
 	{
-		printf("Окружности пересекаются в одной точке");
+		printf("РћРєСЂСѓР¶РЅРѕСЃС‚Рё РЅРµ РїРµСЂРµСЃРµРєР°СЋС‚СЃСЏ Рё РЅРµ РЅР°С…РѕРґСЏС‚СЃСЏ РґСЂСѓРі РІ РґСЂСѓРіРµ");
 	}
-	else if (diag < rsum)
-	{
-		printf("Окружности пересекаются в двух точках");
-	}
-
-	else
-	{
-		printf("Окружности не пересекаются");
-	}
-
+	return 0;
 }
