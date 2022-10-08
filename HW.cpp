@@ -12,7 +12,7 @@ int main()
 
     float d = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
 
-    if ( d > (r1 + r2))
+    if ( d > (r1 + r2) || d+min(r1,r2)<max(r1,r2))
     {
         printf("No touch");
     }
