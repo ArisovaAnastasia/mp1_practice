@@ -7,19 +7,19 @@ int main()
 	int xf, yf, rf, xs, ys, rs, xsum, ysum, rsum;
 	double diag;
 	rsum = 0;
-	
+
 	printf("Введите X и Y центра первой окружности\n");
 	scanf_s("%i %i", &xf, &yf);
-	
+
 	printf("Введите радиус первой окружности\n");
 	scanf_s("%i", &rf);
-	
+
 	printf("Введите X и Y центра второй окружности\n");
 	scanf_s("%i %i", &xs, &ys);
-	
+
 	printf("Введите радиус второй окружности\n");
 	scanf_s("%i", &rs);
-	
+
 	rsum = rf + rs;
 	ysum = abs(yf) + abs(ys);
 	xsum = abs(xf) + abs(xs);
@@ -37,6 +37,10 @@ int main()
 	{
 		printf("Окружность 1 находится внутри окружности 2, но не пересекает её");
 	}
+	else if (diag > rsum)
+	{
+		printf("Окружности не пересекаются и не находятся друг в друге");
+	}
 	else if ((diag == rsum) or ((diag + rs) == rf) or ((diag + rf) == rs))
 	{
 		printf("Окружности пересекаются в одной точке");
@@ -45,9 +49,6 @@ int main()
 	{
 		printf("Окружности пересекаются в двух точках");
 	}
-	else if (diag > rsum)
-	{
-		printf("Окружности не пересекаются и не находятся друг в друге");
-	}
+	
 	return 0;
 }
